@@ -365,6 +365,7 @@ Version      : 1.0
     }
     $("#contactForm").on('submit', function(e) {
         e.preventDefault();
+        var $form = $(this);
         var data = {
             name: $("#name").val(),
             email: $("#email").val(),
@@ -375,11 +376,15 @@ Version      : 1.0
         if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['subject'].length > 1)) {
             $.ajax({
                 type: "POST",
-                url: "sendmail.php",
-                data: data,
+                url: "/",
+                data: $form.serialize(),
                 success: function() {
                     $('#contactForm .input-success').delay(500).fadeIn(1000);
                     $('#contactForm .input-error').fadeOut(500);
+                },
+                error: function() {
+                    $('#contactForm .input-error').delay(500).fadeIn(1000);
+                    $('#contactForm .input-success').fadeOut(500);
                 }
             });
         } else {
