@@ -1,0 +1,394 @@
+/* Custom overrides for Sathvik Namburi's Portfolio - Clean Professional Light Theme */
+
+/* Import modern Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Elegant Dot Grid Background */
+body {
+    background-color: #fafbfe !important;
+    background-image: 
+        radial-gradient(rgba(15, 23, 42, 0.04) 1.5px, transparent 0),
+        radial-gradient(rgba(15, 23, 42, 0.04) 1.5px, transparent 0) !important;
+    background-size: 30px 30px !important;
+    background-position: 0 0, 15px 15px !important;
+    color: #334155 !important;
+}
+
+/* Base Adjustments */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Preloader custom styling for light mode */
+.preloader {
+    background: #ffffff !important;
+}
+
+.preloader svg {
+    fill: #f1f5f9 !important;
+}
+
+.preloader .preloader-heading .load-text {
+    color: #0f172a !important;
+}
+
+/* Single Page Hero overrides for light mode */
+.single-page-hero-area {
+    background: #f1f5f9 !important;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.single-page-hero-area h2 {
+    color: #0f172a !important;
+}
+
+/* Sections Styling */
+.main-hero-area,
+.services-area,
+.testimonials-area,
+.contact-area,
+.main-footer {
+    background: #f8fafc !important; /* Soft Slate Light Gray alternating blocks */
+    border-top: 1px solid rgba(15, 23, 42, 0.05);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.about-area,
+.projects-area,
+.blog-area,
+.coding-profiles-area {
+    background: transparent !important; /* Inherits main body background (white grid) */
+}
+
+/* Section Titles */
+.section-title h2,
+.about-pre-title,
+.projects-area h2 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+/* Professional Cards & Panels */
+.service-item, 
+.resume-box, 
+.testimonial-item, 
+.contact-form, 
+.single-contact {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 20px !important;
+    padding: 35px 30px !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 2px 10px -2px rgba(15, 23, 42, 0.01) !important;
+}
+
+.service-item:hover, 
+.resume-box:hover, 
+.testimonial-item:hover, 
+.single-contact:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.08) !important;
+    background: #ffffff !important;
+}
+
+/* Portfolio Upgrades for Perfect Font/Text Visibility */
+.portfolio-box {
+    background: #0f172a !important; /* Deep dark background */
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    border-radius: 20px !important;
+    padding: 0 !important; /* Fits image to borders */
+    overflow: hidden !important;
+    position: relative;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.15) !important;
+    border-color: rgba(37, 99, 235, 0.25) !important;
+    background: #0f172a !important; /* Keep it dark for contrast */
+}
+
+/* Make overlay gradient dark and robust on hover */
+.portfolio-box:after {
+    background-image: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 60%, rgba(15, 23, 42, 0.15) 100%) !important;
+}
+
+/* Category Pill visibility improvements */
+.portfolio-box .portfolio-category {
+    background: rgba(15, 23, 42, 0.75) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.85em !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Caption spacing and high contrast font styling */
+.portfolio-box .portfolio-caption {
+    padding: 0 24px 28px !important;
+}
+
+.portfolio-box .portfolio-caption h1 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    text-transform: none !important; /* Title Case is highly legible */
+    line-height: 1.4 !important;
+    letter-spacing: 0px !important;
+    font-family: var(--title-font) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important; /* Extra legibility drop-shadow */
+}
+
+/* Card typography colors */
+.service-item h4,
+.resume-box h2,
+.testimonial-item h5,
+.single-contact h2 {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+.service-item p,
+.resume-box p,
+.testimonial-item .text,
+.single-contact p {
+    color: #475569 !important;
+}
+
+.resume-box .resume-date {
+    color: var(--main-color) !important;
+    font-weight: 600;
+}
+
+/* Button Upgrades */
+.theme-btn {
+    background: linear-gradient(135deg, var(--main-color) 0%, #3b82f6 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    color: #ffffff !important;
+}
+
+.theme-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3b82f6 0%, var(--main-color) 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.theme-btn:hover::before {
+    opacity: 1;
+}
+
+.theme-btn-two {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.05) !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.theme-btn-two:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Header & Navigation */
+.main-header {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.main-header.fixed-header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+#mobile-menu ul li a {
+    color: #475569 !important;
+    transition: color 0.3s ease;
+}
+
+#mobile-menu ul li a:hover,
+#mobile-menu ul li a.active {
+    color: var(--main-color) !important;
+    text-shadow: none !important;
+}
+
+/* Custom logo styling in header */
+.logo-area a {
+    color: #0f172a !important;
+}
+
+/* Magic Cursor */
+#ball {
+    background-color: var(--main-color) !important;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+    border: none !important;
+}
+
+/* Skill Marquee Section */
+.company-design-area {
+    background: #f1f5f9 !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 40px 0;
+}
+
+/* Fact Counter Numbers */
+.count-text {
+    background: linear-gradient(135deg, var(--main-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+}
+
+/* Tech Arsenal Skills Grid in about.html */
+.skill-item {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+    border-radius: 16px !important;
+    padding: 25px 15px !important;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    border-color: rgba(37, 99, 235, 0.2) !important;
+    box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.1) !important;
+    background: #ffffff !important;
+    transform: translateY(-3px);
+}
+
+.skill-item h5 {
+    color: #334155 !important;
+    font-weight: 500;
+}
+
+/* Featured Projects Cards */
+.blog-post-box {
+    margin-bottom: 50px !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03) !important;
+    border-radius: 24px !important;
+}
+
+.blog-post-box:hover {
+    border-color: rgba(37, 99, 235, 0.2) !important;
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.1) !important;
+    background: #ffffff !important;
+}
+
+.blog-post-caption h2 a {
+    color: #0f172a !important;
+}
+
+.blog-post-caption h2 a:hover {
+    color: var(--main-color) !important;
+}
+
+/* Coding Profiles Cards */
+.profile-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03) !important;
+    border-radius: 20px !important;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color) !important;
+    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.15) !important;
+    background: #ffffff !important;
+}
+
+.profile-icon {
+    color: var(--main-color) !important;
+}
+
+.profile-details h3 {
+    color: #0f172a !important;
+}
+
+.profile-details p {
+    color: #475569 !important;
+}
+
+/* Form Styling overrides */
+.form-control {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+.form-control:focus {
+    border-color: var(--main-color) !important;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.12) !important;
+}
+
+.form-group label {
+    color: #334155 !important;
+}
+
+/* Social icons List in Contact */
+.about-social ul li a {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+.about-social ul li a:hover {
+    background: var(--main-color) !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Footer details */
+.footer-top p {
+    color: #475569 !important;
+}
+
+.footer-top h2 a {
+    color: #0f172a !important;
+}
+
+.footer-top h2 a:hover {
+    color: var(--main-color) !important;
+}
+
+.copy-right-text {
+    color: #64748b !important;
+}
