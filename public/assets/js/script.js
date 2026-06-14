@@ -374,18 +374,23 @@ Version      : 1.0
         };
 
         if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['subject'].length > 1)) {
-            $.ajax({
-                type: "POST",
-                url: "/",
-                data: $form.serialize(),
-                success: function() {
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: $form.serialize()
+            })
+            .then(function(response) {
+                if (response.ok) {
                     $('#contactForm .input-success').delay(500).fadeIn(1000);
                     $('#contactForm .input-error').fadeOut(500);
-                },
-                error: function() {
+                } else {
                     $('#contactForm .input-error').delay(500).fadeIn(1000);
                     $('#contactForm .input-success').fadeOut(500);
                 }
+            })
+            .catch(function() {
+                $('#contactForm .input-error').delay(500).fadeIn(1000);
+                $('#contactForm .input-success').fadeOut(500);
             });
         } else {
             $('#contactForm .input-error').delay(500).fadeIn(1000);
