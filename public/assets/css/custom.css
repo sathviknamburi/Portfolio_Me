@@ -20,38 +20,44 @@ section {
     z-index: 1;
 }
 
-/* Preloader custom styling for light mode */
+/* Preloader custom styling for dark entrance mode */
 .preloader {
-    background: #ffffff !important;
+    background: #000000 !important;
 }
 
 .preloader svg {
-    fill: #f1f5f9 !important;
+    fill: #09090b !important;
 }
 
 .preloader .preloader-heading .load-text {
-    color: #0f172a !important;
+    color: whitesmoke !important;
 }
 
-/* Single Page Hero overrides for light mode */
+/* Single Page Hero overrides for dark theme */
 .single-page-hero-area {
-    background: #f1f5f9 !important;
-    border-bottom: 1px solid #e2e8f0;
+    background: #09090b !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .single-page-hero-area h2 {
-    color: #0f172a !important;
+    color: #ffffff !important;
 }
 
-/* Sections Styling */
+.single-page-hero-area p {
+    color: #94a3b8 !important;
+}
+
+/* Alternating Dark Sections Styling */
 .main-hero-area,
 .services-area,
 .testimonials-area,
 .contact-area,
-.main-footer {
-    background: #f8fafc !important; /* Soft Slate Light Gray alternating blocks */
-    border-top: 1px solid rgba(15, 23, 42, 0.05);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+.main-footer,
+.skill-area {
+    background: #09090b !important; /* Premium Dark Background */
+    color: #cbd5e1 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .about-area,
@@ -90,8 +96,8 @@ section {
 .testimonial-item:hover, 
 .single-contact:hover {
     transform: translateY(-6px) !important;
-    border-color: rgba(37, 99, 235, 0.25) !important;
-    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.08) !important;
+    border-color: rgba(9, 9, 11, 0.25) !important;
+    box-shadow: 0 15px 30px -10px rgba(9, 9, 11, 0.08) !important;
     background: #ffffff !important;
 }
 
@@ -109,8 +115,8 @@ section {
 
 .portfolio-box:hover {
     transform: translateY(-6px) !important;
-    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.15) !important;
-    border-color: rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 0 15px 30px -10px rgba(9, 9, 11, 0.15) !important;
+    border-color: rgba(9, 9, 11, 0.25) !important;
     background: #0f172a !important; /* Keep it dark for contrast */
 }
 
@@ -163,19 +169,20 @@ section {
 }
 
 .resume-box .resume-date {
-    color: var(--main-color) !important;
+    background: var(--main-color) !important;
+    color: whitesmoke !important;
     font-weight: 600;
 }
 
 /* Button Upgrades */
 .theme-btn {
-    background: linear-gradient(135deg, var(--main-color) 0%, #3b82f6 100%) !important;
+    background: linear-gradient(135deg, var(--main-color) 0%, #27272a 100%) !important;
     color: #ffffff !important;
     border: none !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px;
     border-radius: 50px !important;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 4px 15px rgba(9, 9, 11, 0.2);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     position: relative;
     overflow: hidden;
@@ -184,7 +191,7 @@ section {
 
 .theme-btn:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 8px 20px rgba(9, 9, 11, 0.35);
     color: #ffffff !important;
 }
 
@@ -195,7 +202,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #3b82f6 0%, var(--main-color) 100%);
+    background: linear-gradient(135deg, #27272a 0%, var(--main-color) 100%);
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease;
@@ -254,7 +261,7 @@ section {
 /* Magic Cursor */
 #ball {
     background-color: var(--main-color) !important;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 0 10px rgba(9, 9, 11, 0.3);
     border: none !important;
 }
 
@@ -285,8 +292,8 @@ section {
 }
 
 .skill-item:hover {
-    border-color: rgba(37, 99, 235, 0.2) !important;
-    box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.1) !important;
+    border-color: rgba(9, 9, 11, 0.2) !important;
+    box-shadow: 0 8px 20px -5px rgba(9, 9, 11, 0.1) !important;
     background: #ffffff !important;
     transform: translateY(-3px);
 }
@@ -307,8 +314,8 @@ section {
 }
 
 .blog-post-box:hover {
-    border-color: rgba(37, 99, 235, 0.2) !important;
-    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.1) !important;
+    border-color: rgba(9, 9, 11, 0.2) !important;
+    box-shadow: 0 20px 40px -15px rgba(9, 9, 11, 0.1) !important;
     background: #ffffff !important;
 }
 
@@ -331,7 +338,7 @@ section {
 .profile-card:hover {
     transform: translateY(-5px);
     border-color: var(--main-color) !important;
-    box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.15) !important;
+    box-shadow: 0 15px 30px -10px rgba(9, 9, 11, 0.15) !important;
     background: #ffffff !important;
 }
 
@@ -356,7 +363,7 @@ section {
 
 .form-control:focus {
     border-color: var(--main-color) !important;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.12) !important;
+    box-shadow: 0 0 10px rgba(9, 9, 11, 0.12) !important;
 }
 
 .form-group label {
@@ -373,7 +380,7 @@ section {
 .about-social ul li a:hover {
     background: var(--main-color) !important;
     color: #ffffff !important;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 0 5px 15px rgba(9, 9, 11, 0.25) !important;
 }
 
 /* Footer details */
@@ -391,4 +398,156 @@ section {
 
 .copy-right-text {
     color: #64748b !important;
+}
+
+/* ==========================================================================
+   Inner Elements in Alternating Dark Sections
+   ========================================================================== */
+
+/* Headings in Dark Sections */
+.main-hero-area h2,
+.services-area h2,
+.testimonials-area h2,
+.contact-area h2,
+.main-footer h2,
+.main-footer h2 a,
+.services-area h4,
+.testimonials-area h5,
+.testimonials-area h5 span,
+.single-contact h2,
+.contact-form label,
+.skill-area h2 {
+    color: #ffffff !important;
+}
+
+/* Paragraphs in Dark Sections */
+.main-hero-area p,
+.services-area p,
+.testimonials-area p,
+.testimonial-item .text,
+.single-contact p,
+.footer-top p {
+    color: #94a3b8 !important;
+}
+
+/* Card Elements in Dark Sections */
+.services-area .service-item,
+.testimonials-area .testimonial-item,
+.contact-area .single-contact,
+.contact-area .contact-form {
+    background: #18181b !important; /* Zinc 900 */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Card Hovers in Dark Sections */
+.services-area .service-item:hover,
+.testimonials-area .testimonial-item:hover,
+.contact-area .single-contact:hover {
+    background: #27272a !important; /* Zinc 800 */
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.8) !important;
+    transform: translateY(-6px) !important;
+}
+
+/* Tech Arsenal Skills Grid in Dark Section */
+.skill-area .skill-item {
+    background: #18181b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.skill-area .skill-item:hover {
+    background: #27272a !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.8) !important;
+    transform: translateY(-3px) !important;
+}
+
+.skill-area .skill-item h5 {
+    color: #ffffff !important;
+}
+
+.skill-area .skill-item i {
+    color: #ffffff !important; /* Uniform premium white icons */
+}
+
+/* Icons and Circle buttons in Dark Sections */
+.testimonial-item .author-icon i,
+.single-contact .circle-btn i {
+    color: #ffffff !important;
+}
+
+.single-contact .circle-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Primary buttons inside Dark Sections */
+.main-hero-area .theme-btn,
+.contact-area .contact-form button[type="submit"] {
+    background: #ffffff !important;
+    color: #09090b !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+.main-hero-area .theme-btn:hover,
+.contact-area .contact-form button[type="submit"]:hover {
+    background: #f4f4f5 !important;
+    color: #09090b !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.18) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+.main-hero-area .theme-btn::before,
+.contact-area .contact-form button[type="submit"]::before {
+    background: linear-gradient(135deg, #f4f4f5 0%, #ffffff 100%) !important;
+}
+
+/* Secondary buttons in Dark Sections */
+.testimonials-area .theme-btn-two {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.testimonials-area .theme-btn-two:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* Form Controls in Dark Sections */
+.contact-area .form-control {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+.contact-area .form-control:focus {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Social Links in Dark Sections */
+.contact-area .about-social ul li a {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+.contact-area .about-social ul li a:hover {
+    background: #ffffff !important;
+    color: #09090b !important;
+}
+
+/* Hero Section Specific Details */
+.main-hero-area .clienti-reviews .reviews,
+.main-hero-area .clienti-reviews .reviews span {
+    color: #ffffff !important;
+}
+
+.main-hero-area .hero-image img {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
 }

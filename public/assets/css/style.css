@@ -34,7 +34,7 @@ Version      : 1.0
 * ----------------------------------------------------------------------------------------
 */
 :root {
-    --main-color: #2563eb; /* Professional Blue */
+    --main-color: #09090b; /* Zinc 950 / Black */
     --heading-color: #0f172a; /* Deep Slate */
     --primary-color: #f1f5f9; /* Soft Slate Gray */
     --lighter-color: #f8fafc;
@@ -42,7 +42,7 @@ Version      : 1.0
     --black-color: #0f172a;
     --white-color: #ffffff;
     --border-color: rgba(15, 23, 42, 0.08);
-    --button-border: rgba(37, 99, 235, 0.15);
+    --button-border: rgba(9, 9, 11, 0.15);
     --body-background: #ffffff; /* Crisp White */
     --grey-bg: #f8fafc;
     --text-font: 'Plus Jakarta Sans', sans-serif;
