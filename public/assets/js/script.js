@@ -56,7 +56,7 @@ Version      : 1.0
         meanExpand: ['<i class="fal fa-plus"></i>'],
     });
 
-    $(".sidebar__close-btn ,.mobile-menu .onepage li a  > *:not(button)").on("click", function() {
+    $(".sidebar__close-btn, .mobile-menu li a, .mobile-menu a").on("click", function() {
         $(".sidebar__area").removeClass("sidebar-opened");
         $(".body-overlay").removeClass("opened");
     });
@@ -358,44 +358,69 @@ Version      : 1.0
 
     // Function for email address validation
     function isValidEmail(emailAddress) {
-        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-
+        var pattern = new RegExp(
+            /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+        );
         return pattern.test(emailAddress);
-
     }
+
     $("#contactForm").on('submit', function(e) {
         e.preventDefault();
         var $form = $(this);
-        var data = {
-            name: $("#name").val(),
-            email: $("#email").val(),
-            subject: $("#subject").val(),
-            message: $("#message").val()
-        };
+        var $btn = $form.find('button[type="submit"]');
+        var originalBtnHtml = $btn.html();
 
-        if (isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) && (data['subject'].length > 1)) {
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: $form.serialize()
-            })
-            .then(function(response) {
-                if (response.ok) {
-                    $('#contactForm .input-success').delay(500).fadeIn(1000);
-                    $('#contactForm .input-error').fadeOut(500);
-                } else {
-                    $('#contactForm .input-error').delay(500).fadeIn(1000);
-                    $('#contactForm .input-success').fadeOut(500);
-                }
-            })
-            .catch(function() {
-                $('#contactForm .input-error').delay(500).fadeIn(1000);
-                $('#contactForm .input-success').fadeOut(500);
-            });
-        } else {
-            $('#contactForm .input-error').delay(500).fadeIn(1000);
-            $('#contactForm .input-success').fadeOut(500);
+        var name = $.trim($("#name").val());
+        var email = $.trim($("#email").val());
+        var subject = $.trim($("#subject").val());
+        var message = $.trim($("#message").val());
+
+        if (!name || !email || !subject || !message || !isValidEmail(email)) {
+            $('#contactForm .input-error').fadeIn(400);
+            $('#contactForm .input-success').hide();
+            return false;
         }
+
+        // Disable button and show sending state
+        $btn.prop('disabled', true).html('Sending... <i class="ri-loader-4-line"></i>');
+        $('#contactForm .input-error').fadeOut(200);
+        $('#contactForm .input-success').fadeOut(200);
+
+        fetch("https://formsubmit.co/ajax/sathviknamburi0@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                _subject: "Portfolio Contact: " + subject,
+                subject: subject,
+                message: message,
+                _captcha: "false",
+                _template: "table"
+            })
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            $btn.prop('disabled', false).html(originalBtnHtml);
+            if (data.success === "true" || data.success === true || data.message) {
+                $('#contactForm .input-success').fadeIn(600);
+                $('#contactForm .input-error').hide();
+                $form[0].reset();
+            } else {
+                $('#contactForm .input-error').fadeIn(600);
+                $('#contactForm .input-success').hide();
+            }
+        })
+        .catch(function() {
+            $btn.prop('disabled', false).html(originalBtnHtml);
+            $('#contactForm .input-error').fadeIn(600);
+            $('#contactForm .input-success').hide();
+        });
 
         return false;
     });
